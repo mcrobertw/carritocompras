@@ -1,6 +1,4 @@
 <!--
-
-Video 1******
 http://www.youtube.com/watch?v=hoAEhGh0xwY
 
 Archivos e: www.mediafire.com/download/2734w2k94103nd9/ArchivosIniciales.rar
@@ -19,7 +17,7 @@ METODO GET SON VISIBLES PARA EL USUARIO
 </head>
 <body>
 	<header>
-		<h1>Carrito de Compras</h1>
+		<h1>Detalles</h1>
 		<a href="./carritodecompras.php" title="Ver carrito de compras"></a>
 		<img src="./imagenes/carrito.png">
 	</header>
@@ -27,7 +25,7 @@ METODO GET SON VISIBLES PARA EL USUARIO
 		
 		<?php 
 			include 'conexion.php';
-			$re=mysql_query("select * from producto") or die (mysql_error());
+			$re=mysql_query("select * from producto where id=".$_GET['id']) or die (mysql_error());
 
 			while($f=mysql_fetch_array($re)){
 
@@ -35,13 +33,14 @@ METODO GET SON VISIBLES PARA EL USUARIO
 		 ?>
 		
 
-		<div class="producto">
+		
 			<center>
 					<img src="./productos/<?php echo $f['imagen'];?>"><br>
 					<span><?php echo $f['nombre'];?></span><br>
-					<a href="./detalles.php?id=<?php echo $f['id']; ?>">ver</a>
+					<span><?php echo $f['precio'];?></span><br>
+					<a href="./carritodecompras.php?id=<?php echo $f['id']; ?>">Añadir al carrito de compras</a>
 			</center>
-		</div>
+			
 
 		<?php 
 			}
