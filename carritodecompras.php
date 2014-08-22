@@ -1,14 +1,29 @@
 <!--
 	video2:	http://www.youtube.com/watch?v=-Wsw4n2qYRQ
 	video3: http://www.youtube.com/watch?v=G1T2QEM3Tr0
-
 -->
 <?php
+	/*session_unset();
+	$_SESSION="";*/
 	session_start();
 	include './conexion.php';
 	if(isset($_SESSION['carrito']))
 	{
-			
+		$arreglo=$_SESSION['carrito'];
+		$encontro=false;
+		$numero=0;
+		for($i=0;i<count($arreglo);$i++){
+			if($arreglo[$i]['Id']==$_GET['id']){
+				$encontro=true;
+				$numero=$i;
+			}
+		}
+
+		if($encontro==true){
+			$arreglo[$numero]['Cantidad']=$arreglo[$numero]['Cantidad']+1;
+			$_SESSION['carrito']=$arreglo;
+		}
+
 	}else{
 		if(isset($_GET['id'])){
 			
@@ -16,17 +31,15 @@
 			$precio=0;
 			$imagen="";
 
-			$re=mysql_query("select * from productos where id=".$_GET['id']);
+			$re=mysql_query("select * from producto where id=".$_GET['id']);
 
 			
 			while ($f=mysql_fetch_array($re)) {
+				//print_r($f);
 				$nombre=$f['nombre'];
 				$precio=$f['precio'];
 				$imagen=$f['imagen'];
-				
-				echo $precio;
-				echo $imagen;
-
+			
 			}
 			$arreglo[]=array('Id'=>$_GET['id'],
 								'Nombre'=>$nombre,
@@ -61,6 +74,7 @@
 				$total=0;
 				for($i=0;$i<count($datos);$i++)
 				{
+					/*print_r($datos[$i]);*/
 		?>
 				<div class="producto">	
 					<center>
@@ -69,8 +83,7 @@
 						<span>Precio: <?php echo $datos[$i]['Precio'];?></span><br>
 						<span>Cantidad: <input type="text" value="<?php echo $datos[$i]['Cantidad'];?>"> </span>
 						<span>Subtotal: <?php echo $datos[$i]['Precio']*$datos[$i]['Cantidad'];?></span><br>
-						<h1><?php echo $i;?></h1>
-						<h1><?php echo $datos[$i]['Imagen'];?></h1>
+						
 					</center>	
 				</div>
 		<?php	
