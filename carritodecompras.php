@@ -32,7 +32,7 @@
 					$precio=0;
 					$imagen="";
 
-					$re=mysql_query("select * from producto where id=".$_GET['id']);
+					$re=mysql_query("select * from productos where id=".$_GET['id']);
 
 					
 					while ($f=mysql_fetch_array($re)) {
@@ -58,7 +58,7 @@
 			$precio=0;
 			$imagen="";
 
-			$re=mysql_query("select * from producto where id=".$_GET['id']);
+			$re=mysql_query("select * from productos where id=".$_GET['id']);
 
 			
 			while ($f=mysql_fetch_array($re)) {

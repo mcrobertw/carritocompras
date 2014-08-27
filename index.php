@@ -27,7 +27,7 @@ METODO GET SON VISIBLES PARA EL USUARIO
 		
 		<?php 
 			include 'conexion.php';
-			$re=mysql_query("select * from producto") or die (mysql_error());
+			$re=mysql_query("select * from productos") or die (mysql_error());
 
 			while($f=mysql_fetch_array($re)){
 
