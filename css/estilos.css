@@ -147,16 +147,28 @@ nav{
 	position:absolute;
 	z-index:3;
 	left: 18%;
-	top:0.5%;
+	top:.5%;
 }
 
-menu:after, menu:before{
+menu:after , menu:before{
 		display: block;
 		content: ' ';
 }
 
 menu:after{
 	clear: both;
+}
+
+/*Si falta este estilo... no se muestra en fila....*/
+li {
+  list-style-type : none;
+
+
+  float   : left;
+  cursor  : pointer;
+  padding : 3px 10px;
+
+
 }
 
 li:first-child{
