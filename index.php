@@ -19,9 +19,13 @@ METODO GET SON VISIBLES PARA EL USUARIO
 </head>
 <body>
 	<header>
-		<h1>Carrito de Compras</h1>
-		<a href="./carritodecompras.php" title="Ver carrito de compras"></a>
-		<img src="./imagenes/carrito.png">
+		<!--<h1>Carrito de Compras</h1>-->
+		<img src="./imagenes/logo.png" id="logo">
+		<a href="./carritodecompras.php" title="Ver carrito de compras">
+			<img src="./imagenes/carrito.png">
+
+		</a>
+		
 	</header>
 	<section>
 		

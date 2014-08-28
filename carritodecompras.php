@@ -3,6 +3,7 @@
 	video3: http://www.youtube.com/watch?v=G1T2QEM3Tr0
 	video4: https://www.youtube.com/watch?v=BK3EKM0Ir2c
 	video5: https://www.youtube.com/watch?v=1wy5F_q0coQ
+	video6: https://www.youtube.com/watch?v=4KVgmFU26iE
 -->
 <?php
 	/*session_unset();
@@ -130,7 +131,7 @@
 
 			if($total!=0)
 			{
-			  echo '<center><a href="/.compras/compras.php" class="aceptar">Comprar</a></center>';
+			  echo '<center><a href="compras/compras.php" class="aceptar">Comprar</a></center>';
 			}  
 		?>
 		<center><a href="./">Ver catalogo</a></center>
