@@ -31,7 +31,7 @@ header a{
 }
 
 header a img{
-	width: 100%;
+	width: 50%;
 }
 
 section{
@@ -46,14 +46,14 @@ section{
 
 .producto{
 	width: 23%;
-	height: 220px;
+	/*height: 220px;*/
+	height: 40%;
 	background-color: #fafafa;
 	border: 1px solid gray;
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 1%;
-	margin-top: 1%;
-
+	margin-top: 4%;
 }
 
 .producto img{

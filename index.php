@@ -34,7 +34,7 @@ METODO GET SON VISIBLES PARA EL USUARIO
 				
 		 ?>
 		
-
+		
 		<div class="producto">
 			<center>
 					<img src="./productos/<?php echo $f['imagen'];?>"><br>
