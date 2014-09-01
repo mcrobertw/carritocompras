@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 3.4.5
 -- http://www.phpmyadmin.net
 --
@@ -73,6 +73,25 @@ INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `imagen`, `precio`) VALU
 (4, 'Galaxy s4', 'Este ees el nuevo samsung galaxy :D', 'galaxy.jpg', 9800),
 (5, 'Elemnt Skateboard', 'Nuevo modelo de la patineta', 'element.jpg', 700),
 (6, 'Jalapenos', 'Jalapenos ya que estamos en Mexico', 'jalapenos.jpg', 15);
+
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Apellido` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Usuario` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Password` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Imagen` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci AUTO_INCREMENT=5 ;
+
+
+INSERT INTO `usuarios` (`Id`, `nombre`, `apellido`, `usuario`, `password`, `imagen`) VALUES
+(1, 'Luis', 'Luna', 'luis', '123', 'imagen.jpg');
+
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
