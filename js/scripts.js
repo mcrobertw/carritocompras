@@ -16,5 +16,18 @@ var inicio=function(){
 			}
 		}
 	});
+
+	$(".eliminar").click(function(e){
+		e.preventDefault();
+		var id=$(this).attr('data-id');
+		$(this).parentsUntil('.producto').remove(); //Remover div padre que tenga la clase producto
+		$.post('./js/eliminar.php',{
+			Id:id
+		},function(a){
+			if(a=='0'){
+				location.href="./carritodecompras.php";
+			}
+		});
+	});
 }
 $(document).on('ready',inicio);

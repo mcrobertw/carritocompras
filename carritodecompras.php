@@ -4,6 +4,7 @@
 	video4: https://www.youtube.com/watch?v=BK3EKM0Ir2c
 	video5: https://www.youtube.com/watch?v=1wy5F_q0coQ
 	video6: https://www.youtube.com/watch?v=4KVgmFU26iE
+	video7: https://www.youtube.com/watch?v=AkCStu-k10U
 -->
 <?php
 	/*session_unset();
@@ -117,6 +118,7 @@
 							class="cantidad"> 
 						</span><br>
 						<span>Subtotal: <?php echo $datos[$i]['Precio']*$datos[$i]['Cantidad'];?></span><br>
+						<a href="#" class="eliminar" data-id="<?php echo $datos[$i]['Id'] ?>">Eliminar</a>
 						
 					</center>	
 				</div>

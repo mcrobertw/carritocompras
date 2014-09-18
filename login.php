@@ -25,9 +25,9 @@
 		?>
 
 		<label for="usuario">Usuario</label><br>
-		<input type="text" id="usuario" name="usuario" placeholder="usuario" ><br>
+		<input type="text" id="usuario" name="Usuario" placeholder="usuario" ><br>
 		<label for="password">Password</label><br>
-		<input type="password" id="password" name="password" placeholder="password" ><br>
+		<input type="password" id="password" name="Password" placeholder="password" ><br>
 		<input type="submit" name="aceptar" value="Aceptar" class="aceptar">
 	</form>
 	</section>
