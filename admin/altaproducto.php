@@ -1,3 +1,6 @@
+<!--
+https://www.youtube.com/watch?v=Hg9H3Or_0D8
+-->
 <?php
 	include ("../conexion.php");
 	if(!isset($_POST['nombre']) &&  !isset($_POST['descripcion']) && !isset($_POST['precio'])){
