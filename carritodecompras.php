@@ -5,6 +5,7 @@
 	video5: https://www.youtube.com/watch?v=1wy5F_q0coQ
 	video6: https://www.youtube.com/watch?v=4KVgmFU26iE
 	video7: https://www.youtube.com/watch?v=AkCStu-k10U
+	video11: https://www.youtube.com/watch?v=kpekUCLuwOE
 -->
 <?php
 	/*session_unset();
@@ -133,12 +134,51 @@
 
 			if($total!=0)
 			{
-			  echo '<center><a href="compras/compras.php" class="aceptar">Comprar</a></center>';
+			  //echo '<center><a href="compras/compras.php" class="aceptar">Comprar</a></center>';
+				?>
+
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="formulario">
+					<input type="hidden" name="cmd" value="_cart">
+					<input type="hidden" name="upload" value="1">
+					<input type="hidden" name="business" value="mcrobertw@hotmail.com">
+					<input type="hidden" name="currency_code" value="USD">
+					
+					<?php
+						for($i=0;$i<count($datos);$i++){
+					?>
+						<input type="hidden" name="item_name_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Nombre'];?>">
+						<input type="hidden" name="amount_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Precio'];?>">
+						<input type="hidden" name="quantity_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Cantidad'];?>">
+					<?php
+						}
+					?>
+
+					
+					
+					<center>
+						<input type="submit" value="comprar" class="aceptar" style="width:200px">
+					</center>
+				</form>
+				<?php
+
+
 			}  
 		?>
 		<center><a href="./">Ver catalogo</a></center>
 
 
+
+		
+
 	</section>
 </body>
 </html>
+
+<!--
+- Para el carrito de compras se escoge el "METODO 2" del siguiente link:
+https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside#methodtwo
+
+- La nomenclatura en cuanto a unidades monetarias según paises, esta en el siguiente link:
+https://developer.paypal.com/docs/classic/api/currency_codes/
+
+-->
